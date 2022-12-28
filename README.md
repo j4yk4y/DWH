@@ -27,6 +27,10 @@ git clone --recurse-submodules -j8 git@github.com:j4yk4y/DWH.git
     |--data_base.py                  # 7. Push New and Updated Data to PostgresDB
     |--clean_up_temp.py              # 8. Remove temporary files and folders
 |--dwh_sql\                       # PostgresDB (Stored Procedures & Materliazed Views)
+|--Dockerfile                     # Used by docker-compose in order to build the airflow image
+|--docker-compose.yaml            # Used to start the instance of airflow and all its' modules
+|--requirements.txt               # Used by the Dockerfile to install the required python packages
+|--server_operation_manual.md     # Short description of the server architecture as well as some instructions on Port forwarding
 ```
 
 ## Development
