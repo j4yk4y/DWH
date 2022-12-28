@@ -1,3 +1,4 @@
 [submodule "HLS-scraper"]
 	path = HLS-scraper
 	url = https://github.com/lemonhead94/HLS-scraper.git
+	branch = main
