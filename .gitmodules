@@ -1,4 +1,12 @@
+[submodule "dwh_sql"]
+	path = dwh_sql
+	url = git@github.com:ferpederine/dwh_sql.git
+	branch = main
 [submodule "HLS-scraper"]
 	path = HLS-scraper
-	url = https://github.com/lemonhead94/HLS-scraper.git
+	url = git@github.com:lemonhead94/HLS-scraper.git
+	branch = main
+[submodule "DWH_Dags"]
+	path = DWH_Dags
+	url = git@github.com:lemonhead94/DWH_Dags.git
 	branch = main
