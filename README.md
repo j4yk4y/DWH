@@ -42,12 +42,14 @@ git submodule update --remote
 Current Setup:
 
 OS: Centos 8
-RAM: 4GB
-Cores: 2
-Disk: 40GB SSD
+RAM: 8GB
+Cores: 4
+Disk: 2x50GB (failover)
 
-SLL: not yet
+SLL: implemented with Certbot
 Domain: `test.aiforge.ch`
+
+The following command starts portainer on the server. Portainer is used to monitor the health and logs of the PostgreSQL database, as well as all the airflow instances.
 
 ````bash
 sudo docker run -d -p 9443:9443 -p 8000:8000 \
@@ -61,6 +63,23 @@ sudo docker run -d -p 9443:9443 -p 8000:8000 \
     --sslkey /certs/live/test.aiforge.ch/privkey.pem
 ````
 
+## SSH-Tunneling
+
+We use SSH-Tunneling to access airflow in order to maintain security.
+
 ````bash
 ssh centos@86.119.36.239 -L 9090:localhost:9090
 ````
+
+## Starting Airflow
+
+The Airflow instances are containerized. In order to start them, use the following command in the linux shell:
+
+````bash
+docker compose up -d
+````
+
+This will call the docker-compose file and build the image automatically by executing the contents of the Dockerfile itself. We use an adapted docker-compose file from Airflows official repositories. The adaptions mainly center around installing custom python packages and setting the correct python version (3.9 required).
+
+For lecturers we reccommend the official report. The "server_operation_manual.md" is designed to give an overview of the server setup, as well as an introduction to SSH-Tunneling. It is therefore more aimed towards fellow students. 
+
