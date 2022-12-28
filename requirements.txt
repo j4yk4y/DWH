@@ -1,0 +1,8 @@
+flair
+numpy
+SQLAlchemy==1.4.45
+XlsxWriter
+pandas
+hlsscraper==0.0.1
+numpy==1.23.5
+googlemaps==4.7.3
