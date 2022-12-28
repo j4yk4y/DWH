@@ -29,6 +29,14 @@ git clone --recurse-submodules -j8 git@github.com:j4yk4y/DWH.git
 |--dwh_sql\                       # PostgresDB (Stored Procedures & Materliazed Views)
 ```
 
+## Development
+
+Updating the Submodules:
+
+````bash
+git submodule update --remote
+````
+
 ## Server Admin
 
 Current Setup:
