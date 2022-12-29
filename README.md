@@ -16,29 +16,12 @@ git clone --recurse-submodules -j8 git@github.com:j4yk4y/DWH.git
 ## Project Structure
 
 ```
-|--HLS-scraper\                                     # Webscraper for [Historical Dictionary of Switzerland (HDS)](https://hls-dhs-dss.ch/)
-    |--.github\workflows\
-        |--main.yml                      # Running Automated Unit Tests on each Commit
-    |--.vscode\
-        |--settings.josn                 # VScode Development Settings
-    |--data\                             # Base Data Folder provided so that people don't need to rescrape HLS from scratch (12.12.2022)
-        |--hls_base.csv                  
+|--HLS-scraper\                                     # Webscraper for [Historical Dictionary of Switzerland (HDS)](https://hls-dhs-dss.ch/)              
     |--hlsscraper\
-        |--locators\                     # Selectors
-            |--article.py
-            |--family.py
-            |--open_data.py
-            |--person.py
-            |--place.py
-        |--pages\                        # Pages
-            |--article.py
-            |--family.py
-            |--logging_utils.py
-            |--open_data.py
-            |--person.py
-            |--place.py
-        |--scraper.py                    # Web-Scraper
-    |--tests\                            # Unit Tests
+        |--locators\                                # Selectors
+        |--pages\                                   # Pages
+        |--scraper.py                               # Web-Scraper
+    |--tests\                                       # Unit Tests
 |--DWH_dags\airflow\dags\hls\                       # Airflow Pipeline
     |--hls_scrape.py                                # 1. HLS-Scraping
     |--hhb_aggregation.py                           # 2. Retrieve Hist-Hub Information
